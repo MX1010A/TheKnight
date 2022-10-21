@@ -4,30 +4,30 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 1176831696258084785
-    second: Right_0
+    second: WhiteKnight_0
   - first:
       213: 1475902980568111685
-    second: Right_1
+    second: WhiteKnight_1
   - first:
       213: 2167251917812423506
-    second: Right_2
+    second: WhiteKnight_2
   - first:
       213: 2638184390825757697
-    second: Right_3
+    second: WhiteKnight_3
   - first:
       213: -5336398107559289898
-    second: Left_0
+    second: WhiteKnight_4
   - first:
       213: -6480775002782862693
-    second: Left_1
+    second: WhiteKnight_5
   - first:
       213: -3589364125499932498
-    second: Left_1
+    second: WhiteKnight_6
   - first:
       213: 1932132429360305652
-    second: Left_0
+    second: WhiteKnight_7
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -70,7 +70,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 8
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -86,6 +86,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -111,35 +112,11 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 256
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 256
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Right_0
+      name: WhiteKnight_0
       rect:
         serializedVersion: 2
         x: 0
@@ -160,7 +137,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Right_1
+      name: WhiteKnight_1
       rect:
         serializedVersion: 2
         x: 16
@@ -181,7 +158,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Right_2
+      name: WhiteKnight_2
       rect:
         serializedVersion: 2
         x: 32
@@ -202,7 +179,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Right_3
+      name: WhiteKnight_3
       rect:
         serializedVersion: 2
         x: 48
@@ -223,7 +200,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Left_3
+      name: WhiteKnight_4
       rect:
         serializedVersion: 2
         x: 0
@@ -244,7 +221,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Left_2
+      name: WhiteKnight_5
       rect:
         serializedVersion: 2
         x: 16
@@ -265,7 +242,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Left_1
+      name: WhiteKnight_6
       rect:
         serializedVersion: 2
         x: 32
@@ -286,7 +263,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Left_0
+      name: WhiteKnight_7
       rect:
         serializedVersion: 2
         x: 48
