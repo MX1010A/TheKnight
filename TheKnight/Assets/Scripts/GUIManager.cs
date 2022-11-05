@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class GUIManager : MonoBehaviour
 {
@@ -9,9 +10,9 @@ public class GUIManager : MonoBehaviour
     [SerializeField] private GameObject pauseScreen;
     [SerializeField] private GameObject deathScreen;
     [SerializeField] private GameObject[] HUD;
-    [SerializeField] private Slider slider;
+    [SerializeField] private Slider healthBar;
 
-    public bool _win { get; set; } = false;
+    //public bool Win { get; set; } = false;
 
     public void Pause()
     {
@@ -39,17 +40,21 @@ public class GUIManager : MonoBehaviour
     
     internal void SetMaxHealth(int health)
     {
-        slider.maxValue = health;
+        healthBar.maxValue = health;
     }
     
     internal void SetHealth(int health)
     {
-        slider.value = health;
+        healthBar.value = health;
     }
     
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !deathScreen.activeInHierarchy) Pause();
+        if (Input.GetKeyDown(KeyCode.Escape) && !deathScreen.activeInHierarchy)
+        { 
+            if(!pauseScreen.activeInHierarchy) Pause();
+            else if(pauseScreen.activeInHierarchy) Resume();
+        }
 
         switch (PlayerPrefs.GetInt("hudScale"))
         {

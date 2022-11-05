@@ -9,18 +9,17 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private GameObject deathScreen;
     [SerializeField] private GUIManager GUI;
     
-    private readonly System.Random rnd = new System.Random();
+    //private readonly System.Random rnd = new System.Random();
     private int maxHealth = 100;
     private AudioSource source;
 
     public bool isDead { get; set; } = false;
-    public int pHealing { get; set; } = 10;
-    public int mHealing { get; set; } = 40;
+    
     public int currentHealth { get; set; }
     
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) TakeDamage(10); //for example
+        if (Input.GetKeyDown(KeyCode.H)) TakeDamage(10); //for example
     }
 
     private void Start()
@@ -35,7 +34,7 @@ public class PlayerStats : MonoBehaviour
         currentHealth -= damage;
         GUI.SetHealth(currentHealth);
         
-        if (currentHealth <= 0) Die();
+        //if (currentHealth <= 0) Die();
     }
     
     internal void TakeHealing(int health)
@@ -46,7 +45,6 @@ public class PlayerStats : MonoBehaviour
         GUI.SetHealth(currentHealth);
     }
     
-    // ReSharper disable Unity.PerformanceAnalysis
     private void Die()
     {
         //SaveSystem.DeleteData();

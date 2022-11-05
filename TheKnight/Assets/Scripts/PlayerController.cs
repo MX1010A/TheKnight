@@ -1,21 +1,22 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float speed = 5f;
+    [Header("Attributes")]
+    
     [SerializeField] private float jumpPower = 10f;
     [SerializeField] private LayerMask jumpCheck;
+    [SerializeField] private float speed = 5f;
+
+    public bool isAttacking = false;
     
     private States position = States.IdleRight;
     private Vector2 direction;
-    private Animator anim;
     private BoxCollider2D bc;
-    private Rigidbody2D rb;
     private float horizontal;
-    
+    private Rigidbody2D rb;
+    private Animator anim;
+
     private void Awake()
     {
         bc = GetComponent<BoxCollider2D>();
@@ -26,19 +27,24 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-
-        if (Input.GetButtonDown("Jump") && IsGrounded())
-        {
+        if (!isAttacking) rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+        
+        if (Input.GetButton("Fire1") && IsGrounded())
+            isAttacking = true;
+        else if (Input.GetButtonDown("Jump") && IsGrounded() && !isAttacking)
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
-        }
 
-        UpdateAnimationState();
+        UpdateState();
     }
-    
-    private void UpdateAnimationState()
+
+    private void UpdateState()
     {
-        if (horizontal == 0f) State = position;
+        if (isAttacking)
+        {
+            State = position == States.IdleRight ? States.AttackRight : States.AttackLeft;
+            isAttacking = false;
+        }
+        else if (horizontal == 0f) State = position;
         else if (horizontal > 0f)
         {
             State = rb.velocity.y != 0f ? States.JumpRight : States.Right;
@@ -69,6 +75,8 @@ public class PlayerController : MonoBehaviour
         Right,
         Left,
         JumpRight,
-        JumpLeft
+        JumpLeft,
+        AttackRight,
+        AttackLeft
     }
 }
